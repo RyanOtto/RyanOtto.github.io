@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta charset="UTF-8">
   <meta name="keywords" content="Ryan Otto, jQuery, HTML, CSS, JavaScript">
   <meta name="author" content="Ryan Otto">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,20 +10,35 @@
   <title>Work in Progress</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="scripts/jquery-3.2.1.min.js"></script>
-  <script src="scripts/aboutHover.js"></script>
+  <script src="scripts/main.js"></script>
 </head>
 
 
 
-
+<div id="wrapper">
 <body>
-<h1>Work in Progress</h1>
-<h2>A site made with JQuery</h2>
-<div style="display:inline-block;"><p>Welcome to my </p></div>  <div style="display:inline-block;"><p class="aboutMe">site.</p></div>
+
+<div id="banner"><h1>Work in Progress</h1><h2>A site made with jQuery!</h2></div>
+
+
+<div id="aboutMe">  
+  
+  <p style="text-align:center;font-size:30px;">Welcome</p>
+
+  <div class="aboutMeEntries" id="aboutMe1"> 
+	<div class="beforeInfoDiv";"><p>Welcome to my </p></div>  
+	<div class="infoDiv"><p id="intro1">site.</p></div>
+	<div class="infoDiv"><p id="intro2" style="display:none;"> JavaScript. </p></div>
+  </div>
+  
+  <p style="text-align:center;font-size:30px;">About Me</p>
+
+  <div class="aboutMeEntries" id="aboutMe2"> 
+	<div class="infoDiv"><p id="intro3" style="display:none;"> Stuff </p></div>
+  </div>
+  
+</div>
+
 </body>
-
-
-
-
-
+</div>
 </html>
