@@ -10,9 +10,5 @@ $(document).ready(function() {
 	$('#intro2').click( function() { $('#intro2').css("color","black"); });
 	$('#intro2').click( function() { $('#intro2').css("color","black"); });
 	$('#intro2').click( function() { $('#aboutMe1').css("padding-bottom","20px"); });
-
-
-	$('#intro3').click( function() { $('#intro3').text("site, where I use jQuery to practice my"); });
-	$('#intro3').click( function() { $('#intro3').css("color","black"); });
 	
 });
