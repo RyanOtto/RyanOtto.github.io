@@ -9,10 +9,7 @@ body{ background-color:white; color:black; font-family:verdana}
 .aboutMeEntries{ width:70%; margin:0; margin-left:auto; margin-right:auto; border:9px solid; border-radius: 20px; }
 .infoDiv{ color:blue; display:inline-block; }
 .beforeInfoDiv{ display:inline-block; }
-
-.rainbow {
-    animation: colorRotate 6s linear 0s infinite;
-}
+.rainbow { animation: colorRotate 6s linear 0s infinite; }
 
 @keyframes colorRotate {
     from { color: rgb(255, 0, 0); }

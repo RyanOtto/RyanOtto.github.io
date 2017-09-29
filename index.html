@@ -9,8 +9,10 @@
   
   <title>Work in Progress</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="scripts/jquery-3.2.1.min.js"></script>
+  <script src="scripts/jquery-3.2.1.min.js" ></script>
   <script src="scripts/main.js"></script>
+  <script src="scripts/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+  <script> $(function() { $( "#accordion" ).accordion(); }); </script>
 </head>
 
 
@@ -20,8 +22,7 @@
 
 <div id="banner"><h1>Work in Progress</h1><h2>A site made with jQuery!</h2></div>
 
-
-<div id="aboutMe">  
+<div id="aboutMe"><div id="accordion">  
   
   <p style="text-align:center;font-size:30px;">Welcome</p>
   <div class="aboutMeEntries" id="aboutMe1"> 
@@ -40,7 +41,7 @@
     <div><p id="intro3"> Mostly just messing about with HTML/CSS/JavaScript, trying to come up with clever gimicks to keep you interested in this website. </p></div>
   </div>
   
-</div>
+</div></div>
 
 </body>
 </div>
