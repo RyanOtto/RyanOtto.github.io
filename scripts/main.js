@@ -9,6 +9,9 @@ $(document).ready(function() {
 	$('#intro2').click( function() { $('#intro2').text("JavaScript, a language that is ironically nothing like Java."); });
 	$('#intro2').click( function() { $('#intro2').css("color","black"); });
 	$('#intro2').click( function() { $('#intro2').css("color","black"); });
-	$('#intro2').click( function() { $('#aboutMe1').css("padding-bottom","20px"); });
 	
+	//Accordion
+	var icons = { header: "ui-icon-circle-arrow-e", activeHeader: "ui-icon-circle-arrow-s" };
+	$(function() { $( "#accordion" ).accordion({ collapsible: true, height:fill, icons: icons }); });
+
 });
