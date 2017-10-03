@@ -2,8 +2,8 @@ h1{ text-align: center; }
 h2{ text-align: center; }
 body{ background-color:white; color:black; font-family:verdana}
 
-#navbar{ justify-content:center; margin-right:1.5em; display:flex; }
-#navbar p{ padding-right:5%; }
+#navbar{ justify-content:center; margin-right:1.5em; display:flex; border-style:solid; margin-right:0; margin-left:0; }
+#navbar-item{ padding-right:5%;  }
 #wrapper{ display:none; }
 #banner{ background-color:#64c2ef; border-radius: 25px; padding-bottom:1px; padding-top:1px; text-align:center;}
 #banner img{ margin-right:1.5em; animation:image-spin 35s linear 0s infinite; }
@@ -15,6 +15,7 @@ body{ background-color:white; color:black; font-family:verdana}
 .beforeInfoDiv{ display:inline-block; }
 .rainbow { animation: colorRotate 6s linear 0s infinite; }
 .accordionEntry{ text-align:left;font-size:30px; }
+.ui-accordion-header-active{ background-color:#007fff !important; color:white !important;}
 
 @keyframes colorRotate {
     from { color: rgb(255, 0, 0); }
