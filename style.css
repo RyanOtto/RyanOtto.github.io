@@ -3,19 +3,35 @@ h2{ text-align: center; }
 body{ background-color:white; color:black; font-family:verdana}
 
 #navbar{ justify-content:center; margin-right:1.5em; display:flex; border-style:solid; margin-right:0; margin-left:0; }
-#navbar-item{ padding-right:5%;  }
 #wrapper{ display:none; }
 #banner{ background-color:#64c2ef; border-radius: 25px; padding-bottom:1px; padding-top:1px; text-align:center;}
 #banner img{ margin-right:1.5em; animation:image-spin 35s linear 0s infinite; }
-#aboutMe{ text-align:center; font-size:20px; margin-right:.15em; }
+#aboutMe{ font-size:20px; margin-right:.15em; }
 #accordion-resizer { justify-content:center; }
 
 .aboutMeEntries{ width:70%; margin:0; margin-left:auto; margin-right:auto; border:9px solid; border-radius: 20px; }
-.infoDiv{ color:blue; display:inline-block; }
-.beforeInfoDiv{ display:inline-block; }
-.rainbow { animation: colorRotate 6s linear 0s infinite; }
+.aboutMeEntries p{ margin-left:1em; }
 .accordionEntry{ text-align:left;font-size:30px; }
+.beforeInfoDiv{ display:inline-block; }
+.infoDiv{ color:blue; display:inline-block; }
+.navbar-item{ padding-right:1.5em;  }
+.rainbow { animation: colorRotate 6s linear 0s infinite; }
+
+
 .ui-accordion-header-active{ background-color:#007fff !important; color:white !important;}
+
+/* Tic-Tac-Toe Game Page */
+@media screen and (max-width: 900px) { #tic-tac-toe-board{ font-size:13em !important; } }
+@media screen and (max-width: 600px) { #tic-tac-toe-board{ font-size:10em !important; } }
+@media screen and (max-width: 460px) { #tic-tac-toe-board{ font-size:8em !important; } }
+@media screen and (max-width: 380px) { #tic-tac-toe-board{ font-size:6em !important; } }
+@media screen and (max-width: 285px) { #tic-tac-toe-board{ font-size:4em !important; } }
+@media screen and (max-width: 200px) { #tic-tac-toe-board{ font-size:2em !important; } }
+
+#tic-tac-toe-board{ text-align:center; font-size:15em; }
+
+.gameRow{ display:inline-block; }
+
 
 @keyframes colorRotate {
     from { color: rgb(255, 0, 0); }
