@@ -1,8 +1,9 @@
 h1{ text-align: center; }
 h2{ text-align: center; }
+a{ text-decoration: none; }
 body{ background-color:white; color:black; font-family:verdana}
 
-#navbar{ justify-content:center; margin-right:1.5em; display:flex; border-style:solid; margin-right:0; margin-left:0; }
+#navbar{ justify-content:center; margin-right:1.5em; display:flex; font-size:20px; /* border-style:solid; */ margin-right:0; margin-left:0; }
 #wrapper{ display:none; }
 #banner{ background-color:#64c2ef; border-radius: 25px; padding-bottom:1px; padding-top:1px; text-align:center;}
 #banner img{ margin-right:1.5em; animation:image-spin 35s linear 0s infinite; }
