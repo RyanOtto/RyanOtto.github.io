@@ -4,6 +4,7 @@ a{ text-decoration: none; }
 body{ background-color:white; color:black; font-family:verdana}
 
 #navbar{ justify-content:center; margin-right:1.5em; display:flex; font-size:20px; /* border-style:solid; */ margin-right:0; margin-left:0; }
+#navbar-item-main{ background-image:url('line.png'); background-repeat:repeat-x; background-position:100% 100%; padding-bottom:8px; white-space:nowrap; }
 #wrapper{ display:none; }
 #banner{ background-color:#64c2ef; border-radius: 25px; padding-bottom:1px; padding-top:1px; text-align:center;}
 #banner img{ margin-right:1.5em; animation:image-spin 35s linear 0s infinite; }
@@ -11,11 +12,10 @@ body{ background-color:white; color:black; font-family:verdana}
 #accordion-resizer { justify-content:center; }
 
 .aboutMeEntries{ width:70%; margin:0; margin-left:auto; margin-right:auto; border:9px solid; border-radius: 20px; }
-.aboutMeEntries p{ margin-left:1em; }
 .accordionEntry{ text-align:left;font-size:30px; }
 .beforeInfoDiv{ display:inline-block; }
 .infoDiv{ color:blue; display:inline-block; }
-.navbar-item{ padding-right:1.5em;  }
+.navbar-item{ padding-right:1.5em; }
 .rainbow { animation: colorRotate 6s linear 0s infinite; }
 
 
