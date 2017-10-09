@@ -1,7 +1,4 @@
-<!-- TODO: Tic tac toe line setup -->
-<!-- TODO: onClick listeners -->
-<!-- TODO: win conditions -->
-<!-- TODO: game status text box -->
+<!-- TODO: Pretty up dialog box header to be theme-consistent -->
 
 <head>
   <meta charset="UTF-8">
@@ -18,14 +15,13 @@
   <script src="scripts/jquery-3.2.1.min.js" ></script>
   <script src="scripts/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
   <script src="scripts/tictactoe.js"></script>
+  </script>
   
 </head>
 
 
-
 <div id="wrapper">
 <body>
-
 
 
 <div id="banner">
@@ -39,22 +35,25 @@
 	<p class="navbar-item"><a id="navbar-item-main" href="tictactoe.html">Tic-Tac-Toe</p></a>
 </div>
 
+<div id="dialog" style="display:none;" title="Game Over!">
+  <p>Tie!</p>
+</div>
 
 <table id="tic-tac-toe-board">
     <tr>
-        <td style="border-right:10px solid; border-bottom:10px solid;">aa</td>
-        <td style="border-right:10px solid; border-bottom:10px solid;">bb</td>
-        <td style="border-bottom:10px solid;">cc</td>
+        <td class="unfilled" id="1" style="border-right:10px solid; border-bottom:10px solid;"> &nbsp; </td>
+        <td class="unfilled" id="2" style="border-right:10px solid; border-bottom:10px solid;"> &nbsp; </td>
+        <td class="unfilled" id="3"  style="border-bottom:10px solid;"> &nbsp; </td>
     </tr>
     <tr>
-        <td style="border-right:10px solid; border-bottom:10px solid;">aa</td>
-        <td style="border-right:10px solid; border-bottom:10px solid;">bb</td>
-        <td style="border-bottom:10px solid;">cc</td>
+        <td class="unfilled" id="4"  style="border-right:10px solid; border-bottom:10px solid;"> &nbsp; </td>
+        <td class="unfilled" id="5"  style="border-right:10px solid; border-bottom:10px solid;"> &nbsp; </td>
+        <td class="unfilled" id="6"  style="border-bottom:10px solid;"> &nbsp; </td>
     </tr>
     <tr>
-        <td style="border-right:10px solid;">aa</td>
-        <td style="border-right:10px solid;">bb</td>
-        <td >cc</td>
+        <td class="unfilled" id="7"  style="border-right:10px solid;"> &nbsp; </td>
+        <td class="unfilled" id="8"  style="border-right:10px solid;"> &nbsp; </td>
+        <td class="unfilled" id="9"> &nbsp; </td>
     </tr>
 </table>
 
