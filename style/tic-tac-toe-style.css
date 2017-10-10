@@ -1,0 +1,16 @@
+@media screen and (max-width: 900px) { #tic-tac-toe-board{ font-size:11em !important; } }
+@media screen and (max-width: 600px) { #tic-tac-toe-board{ font-size:8em !important; } }
+@media screen and (max-width: 460px) { #tic-tac-toe-board{ font-size:6em !important; } }
+@media screen and (max-width: 380px) { #tic-tac-toe-board{ font-size:4em !important; } }
+@media screen and (max-width: 285px) { #tic-tac-toe-board{ font-size:2em !important; } }
+@media screen and (max-width: 200px) { #tic-tac-toe-board{ font-size:2em !important; } }
+
+#tic-tac-toe-board{ text-align:center; font-size:13em; margin-left:5%; width:90%; }
+
+.filledOne{ content: 'whatever it is you want to add';}
+.filledTwo{ content: 'whatever it is you want to add';}
+.gameRow{ display:inline-block; }
+.game-entry{ border:solid; }
+.game-entry-top{ border-right:solid; }
+.game-entry-middle{ border-right:solid; }
+.game-entry-bottom{ border-right:solid; }
