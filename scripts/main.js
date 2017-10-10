@@ -11,7 +11,6 @@ $(document).ready(function() {
 	$('#intro2').click( function() { $('#intro2').css("color","black"); });
 	
 	//Accordion
-	var icons = { header: "ui-icon-circle-arrow-e", activeHeader: "ui-icon-circle-arrow-s" };
-	$(function() { $( "#accordion" ).accordion({ collapsible: true, height:fill, icons: icons }); });
+	$(function() { $( "#accordion" ).accordion({ collapsible:true }); });
 
 });

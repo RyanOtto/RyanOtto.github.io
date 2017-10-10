@@ -2,9 +2,6 @@
 <html>
 <!-- TODO: Pretty up the banner  -->
 <!-- TODO: Pretty up the navbar and its links -->
-<!-- TODO: Improve the navbar link underline -->
-<!-- TODO: Fix icons in the accordeon widget, or just use images in a different way -->
-<!-- TODO: Show a time widget -->
 
 <head>
   <meta charset="UTF-8">
@@ -21,20 +18,16 @@
   <script src="scripts/jquery-3.2.1.min.js" ></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
   <script> $(function() { $( "#accordion" ).accordion(); }); </script>
 </head>
-
-
 
 <div id="wrapper">
 <body>
 
-
-
 <div id="banner">
 <h1>Work in Progress</h1>
-<h2>A site made with jQuery!</h2>
-<!-- <img style="height:10%;width:10%;" src="img/rotatingBannerImage.png"> -->
+<h2>My Personal Website</h2>
 </div>
 
 <div id="navbar">
@@ -42,13 +35,14 @@
 	<p class="navbar-item"><a href="tictactoe.html">Tic-Tac-Toe</p></a>
 </div>
 
+<span class="ui-icon ui-icon-arrowthick-1-n"></span>
+
 <div id="aboutMe"><div id="accordion-resizer" class="ui-widget-content"><div id="accordion">  
-  
   <p class="accordionEntry">Welcome</p>
   <div class="aboutMeEntries" id="aboutMe1"> 
-	<div class="beforeInfoDiv"><p>Welcome to my</p></div>  
-	<div class="infoDiv"><span id="intro1">site.</span></div>
-	<div class="infoDiv"><span id="intro2" style="display:none;"> JavaScript. </span></div>
+  	<div class="beforeInfoDiv" style=><p>Welcome to my</p></div>  
+  	<div class="infoDiv"><span id="intro1">site.</span></div>
+  	<div class="infoDiv"><span id="intro2" style="display:none;"> JavaScript. </span></div>
   </div>
   
   <p class="accordionEntry">About Me</p>
@@ -58,7 +52,7 @@
   
   <p class="accordionEntry">What I'm Working On</p>
   <div class="aboutMeEntries" id="aboutMe3"> 
-    <div><p id="intro3"> Most of my time these days is spent coding.  I'm currently working on several sites, including this one.  In addition to adding more widgets to the page using jQuery, I intend to add several javascript games and eventually place my projects here as a portfolio of my work. </p></div>
+    <div><p id="intro3"> Most of my time these days is spent coding.  I'm currently working on several sites, including this one.  In addition to adding more widgets to the page, I intend to add several javascript games and eventually place my projects here as a portfolio of my work. </p></div>
   </div>
   
 </div></div></div>
