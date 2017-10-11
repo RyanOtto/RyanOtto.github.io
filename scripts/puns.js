@@ -1,11 +1,20 @@
 //Puns
 $(document).ready(function() {
-	
+	var punString, punStringArr, whichPun;
+
 	$.get('resources/puns.txt', function(data) {
-		var punString=data;
-		var punStringArr=punString.split("\n");
-		var whichPun = Math.floor((Math.random() * punStringArr.length)); 
-	   	$('#pun-container').text(punStringArr[whichPun]);
+		 punString=data;
+		 punStringArr=punString.split("\n");
+		newPun();
 	}, 'text');
+
+	$('#pun-button').click(function(){ 
+		newPun(); 
+	});
+
+	function newPun(){
+		var whichPun = Math.floor((Math.random() * punStringArr.length)); 
+	   	$('#pun').text(punStringArr[whichPun]);
+	}
 
 });
