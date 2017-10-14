@@ -14,7 +14,10 @@ $(document).ready(function() {
 
 	function newPun(){
 		var whichPun = Math.floor((Math.random() * punStringArr.length)); 
-	   	$('#pun').text(punStringArr[whichPun]);
+		$('#pun').fadeTo('3000', 0, function() {
+			$('#pun').text(punStringArr[whichPun]);
+		});
+		$('#pun').fadeTo('3000', 1);
 	}
 
 });
