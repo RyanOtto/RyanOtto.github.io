@@ -10,6 +10,6 @@ $(document).ready(function() {
 	$('#intro2').click( function() { $('#intro2').css("color","black"); });
 	
 	//Accordion
-	$(function() { $( "#accordion" ).accordion({ collapsible:true }); });
+	$(function() { $( "#accordion" ).accordion({ collapsible:true, heightStyle:"content" }); });
 	
 });
