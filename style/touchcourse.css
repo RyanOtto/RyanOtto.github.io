@@ -1,2 +1,3 @@
-#course{ height:100%; border:8px solid  }
-#player{ position:absolute;  }
+#course{ height:100%; border:8px solid; }
+#background{ width:100%; height:100%; }
+#player{ position:absolute; height:4%; width:4%; }
