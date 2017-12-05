@@ -25,12 +25,14 @@ observer.observe(target, config);
 	 	var top = ($('#player').css('top'));
 	 	var pixelData = canvas.getContext('2d').getImageData(parseFloat(left), parseFloat(top), 1, 1).data;
 	 	console.log(pixelData[0] + ' ' + pixelData[1] + ' ' + pixelData[2]);
-		if(pixelData[0]==195 && pixelData[1]==195 && pixelData[2]==195) console.log("You lose!" + pixelData[0] + ' ' + pixelData[1] + ' ' + pixelData[2]);
+		if(pixelData[0]==195 && pixelData[1]==195 && pixelData[2]==195) alert("You lose!" + pixelData[0] + ' ' + pixelData[1] + ' ' + pixelData[2]);
 	 }
 
 	$('#course').click(function(e) { 
 		$(function(){ 
-			$('#player').animate({ left:e.pageX,top:e.pageY}); 
+			var playerWidth = $('#player').width();
+			var playerHeight = $('#player').height();
+			$('#player').animate({ left:e.pageX-playerWidth/2,top:e.pageY-playerHeight/2}); 
 		});
 	});
 
