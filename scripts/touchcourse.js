@@ -23,9 +23,25 @@ observer.observe(target, config);
 	 function track(e){
 	 	var left = ($('#player').css('left'));
 	 	var top = ($('#player').css('top'));
-	 	var pixelData = canvas.getContext('2d').getImageData(parseFloat(left), parseFloat(top), 1, 1).data;
+	 	var pixelData = canvas.getContext('2d').getImageData(parseFloat(left)-15, parseFloat(top), 1, 1).data;
+	 	var pixelData2 = canvas.getContext('2d').getImageData(parseFloat(left)+parseFloat(($('#player').css('width')))-10, parseFloat(top), 1, 1).data;
+	 	var pixelData3 = canvas.getContext('2d').getImageData(parseFloat(left)+parseFloat(($('#player').css('width')))-10, parseFloat(top)+parseFloat(($('#player').css('height')))-15, 1, 1).data;
+	 	var pixelData4 = canvas.getContext('2d').getImageData(parseFloat(left)-15, parseFloat(top)+parseFloat(($('#player').css('height')))-15, 1, 1).data;
+	 	
 	 	console.log(pixelData[0] + ' ' + pixelData[1] + ' ' + pixelData[2]);
-		if(pixelData[0]==195 && pixelData[1]==195 && pixelData[2]==195) alert("You lose!" + pixelData[0] + ' ' + pixelData[1] + ' ' + pixelData[2]);
+
+		if(pixelData[0]==195 && pixelData[1]==195 && pixelData[2]==195 
+		|| pixelData2[0]==195 && pixelData2[1]==195 && pixelData2[2]==195
+		|| pixelData3[0]==195 && pixelData3[1]==195 && pixelData3[2]==195
+		|| pixelData4[0]==195 && pixelData4[1]==195 && pixelData4[2]==195){ 
+			alert("You lose!");
+		}
+		else if(pixelData[0]==0 && pixelData[1]==162 && pixelData[2]==232
+		|| pixelData2[0]==0 && pixelData2[1]==162 && pixelData2[2]==232
+		|| pixelData3[0]==0 && pixelData3[1]==162 && pixelData3[2]==232
+		|| pixelData4[0]==0 && pixelData4[1]==162 && pixelData4[2]==232){ 
+			alert("Next level!");
+		}
 	 }
 
 	$('#course').click(function(e) { 
