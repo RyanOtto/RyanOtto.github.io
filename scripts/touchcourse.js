@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+var level = 1;
+var waitingForLevelChange = false;
 //Observer to track player movement
 var target = document.getElementById('player');
 var observer = new MutationObserver(function(mutations) {
@@ -34,13 +36,16 @@ observer.observe(target, config);
 		|| pixelData2[0]==195 && pixelData2[1]==195 && pixelData2[2]==195
 		|| pixelData3[0]==195 && pixelData3[1]==195 && pixelData3[2]==195
 		|| pixelData4[0]==195 && pixelData4[1]==195 && pixelData4[2]==195){ 
-			alert("You lose!");
+			//alert("You lose!");
+			$('#player').css({left:0,top:0});
 		}
 		else if(pixelData[0]==0 && pixelData[1]==162 && pixelData[2]==232
 		|| pixelData2[0]==0 && pixelData2[1]==162 && pixelData2[2]==232
 		|| pixelData3[0]==0 && pixelData3[1]==162 && pixelData3[2]==232
 		|| pixelData4[0]==0 && pixelData4[1]==162 && pixelData4[2]==232){ 
-			alert("Next level!");
+			//alert("Next level!");
+			if(!waitingForLevelChange){ nextLevel(); }
+			waitingForLevelChange = true;
 		}
 	 }
 
@@ -51,6 +56,17 @@ observer.observe(target, config);
 			$('#player').animate({ left:e.pageX-playerWidth/2,top:e.pageY-playerHeight/2}); 
 		});
 	});
+
+	function nextLevel(){
+		level++;
+		$('#background').attr('src','img/TouchCourse/level'+level+'.png')	
+		var img = document.getElementById('background');
+		canvas.width = img.width;
+		canvas.height = img.height;
+		canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+		$('#player').css({left:0,top:0});
+		waitingForLevelChange = false;
+	}
 
 
 });
