@@ -1,17 +1,16 @@
 $(document).ready(function() {
 
-var level = 1;
-var waitingForLevelChange = false;
-//Observer to track player movement
-var target = document.getElementById('player');
-var observer = new MutationObserver(function(mutations) {
- mutations.forEach(function(mutation) {
-   if(mutation.type == 'attributes');
-   	track();
- });    
-});
-var config = { attributes: true, childList: true, characterData: true };
-observer.observe(target, config);
+	var level = 1;
+	var waitingForLevelChange = false;
+	var target = document.getElementById('player');
+	var observer = new MutationObserver(function(mutations) {
+	 mutations.forEach(function(mutation) {
+	   if(mutation.type == 'attributes');
+	   	track();
+	 });    
+	});
+	var config = { attributes: true, childList: true, characterData: true };
+	observer.observe(target, config);
 
 
 	$('#player').css({left:0,top:0});
@@ -44,8 +43,10 @@ observer.observe(target, config);
 		|| pixelData3[0]==0 && pixelData3[1]==162 && pixelData3[2]==232
 		|| pixelData4[0]==0 && pixelData4[1]==162 && pixelData4[2]==232){ 
 			//alert("Next level!");
-			if(!waitingForLevelChange){ nextLevel(); }
-			waitingForLevelChange = true;
+			if(!waitingForLevelChange){ 
+				nextLevel(); 
+				waitingForLevelChange = true;
+			}
 		}
 	 }
 
@@ -64,7 +65,8 @@ observer.observe(target, config);
 		canvas.width = img.width;
 		canvas.height = img.height;
 		canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
-		$('#player').css({left:0,top:0});
+		$('#player').stop();
+    	$('#player').css({left:0,top:0});
 		waitingForLevelChange = false;
 	}
 
