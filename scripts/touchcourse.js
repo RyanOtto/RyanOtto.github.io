@@ -46,7 +46,6 @@ $(document).ready(function() {
 		|| pixelData2[0]==0 && pixelData2[1]==162 && pixelData2[2]==232
 		|| pixelData3[0]==0 && pixelData3[1]==162 && pixelData3[2]==232
 		|| pixelData4[0]==0 && pixelData4[1]==162 && pixelData4[2]==232){ 
-			alert("Next level! " + level);
 			//if(!waitingForLevelChange){ 
 				nextLevel(); 
 				waitingForLevelChange = true;
@@ -73,6 +72,8 @@ $(document).ready(function() {
 		$('#player').stop();
     	$('#player').css({left:0,top:0});
 		waitingForLevelChange = false;
+		score += timer;
+		$('#score').text('Score: ' + parseInt(score))
 		timer = 60;
 		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds')
 	}
