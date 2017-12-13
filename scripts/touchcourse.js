@@ -76,6 +76,7 @@ $(document).ready(function() {
 		$('#score').text('Score: ' + parseInt(score))
 		timer = 60;
 		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds')
+
 	}
 
 	function playerLoses(){
@@ -88,7 +89,6 @@ $(document).ready(function() {
 	function countdown(){
 		timer--;
 		if(timer <= 0){ playerLoses(); }
-		console.log(timer);
 		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds')
 	}
 

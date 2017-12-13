@@ -28,8 +28,3 @@ body{ background-color:white; color:black; font-family:verdana }
     83.3% { color: rgb(255, 255, 0); }
     to { color: rgb(255, 0, 0); }
 }
-
-@keyframes image-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
