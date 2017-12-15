@@ -1,10 +1,13 @@
 $(document).ready(function() {
 
+	var img = document.getElementById('background');
+	var canvas = document.createElement('canvas');
 	var timer = 60;
 	var	timerInterval = setInterval( countdown, 1000 );
 	var score = 0;
 	var level = 1;
-	var waitingForLevelChange = false;
+	level = localStorage.getItem('levelNumber');
+	//var waitingForLevelChange = false;
 	var target = document.getElementById('player');
 	var observer = new MutationObserver(function(mutations) {
 	 mutations.forEach(function(mutation) {
@@ -15,15 +18,7 @@ $(document).ready(function() {
 	var config = { attributes: true, childList: true, characterData: true };
 	observer.observe(target, config);
 
-
-
-	$('#player').css({left:0,top:0});
-	var img = document.getElementById('background');
-	var canvas = document.createElement('canvas');
-	canvas.width = img.width;
-	canvas.height = img.height;
-	
-	canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+	loadLevel();
 
 	 function track(e){
 	 	var left = ($('#player').css('left'));
@@ -48,7 +43,7 @@ $(document).ready(function() {
 		|| pixelData4[0]==0 && pixelData4[1]==162 && pixelData4[2]==232){ 
 			//if(!waitingForLevelChange){ 
 				nextLevel(); 
-				waitingForLevelChange = true;
+				//waitingForLevelChange = true;
 			//}
 		}
 	 }
@@ -61,21 +56,25 @@ $(document).ready(function() {
 		});
 	});
 
+	$('#newGameButton').click(function(e) { 
+		localStorage.setItem('levelNumber', 1);
+		level = 1;
+		loadLevel();
+	});
+
 	function nextLevel(){
 		//clearInterval(myInterval);
 		level++;
-		$('#background').attr('src','img/TouchCourse/level'+level+'.png')	
-		var img = document.getElementById('background');
-		canvas.width = img.width;
-		canvas.height = img.height;
-		canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+		localStorage.setItem('levelNumber', level);
+		loadLevel();
 		$('#player').stop();
     	$('#player').css({left:0,top:0});
-		waitingForLevelChange = false;
+		//waitingForLevelChange = false;
 		score += timer;
-		$('#score').text('Score: ' + parseInt(score))
+		$('#score').text('Score: ' + parseInt(score));
+		$('#level').text('Level: ' + parseInt(level));
 		timer = 60;
-		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds')
+		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds');
 
 	}
 
@@ -83,13 +82,21 @@ $(document).ready(function() {
 		$('#player').stop();
 		$('#player').css({left:0,top:0});
 		timer = 60;
-		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds')
+		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds');
 	}
 
 	function countdown(){
 		timer--;
 		if(timer <= 0){ playerLoses(); }
-		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds')
+		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds');
+	}
+
+	function loadLevel(){
+		$('#background').attr('src','img/TouchCourse/level'+level+'.png')	
+		$('#player').css({left:0,top:0});
+		canvas.width = img.width;
+		canvas.height = img.height;
+		canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
 	}
 
 });
