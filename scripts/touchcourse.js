@@ -7,6 +7,7 @@ $(document).ready(function() {
 	var score = 0;
 	var level = 1;
 	level = localStorage.getItem('levelNumber');
+	score = localStorage.getItem('score');
 	//var waitingForLevelChange = false;
 	var target = document.getElementById('player');
 	var observer = new MutationObserver(function(mutations) {
@@ -18,6 +19,7 @@ $(document).ready(function() {
 	var config = { attributes: true, childList: true, characterData: true };
 	observer.observe(target, config);
 
+	drawUI();
 	loadLevel();
 
 	 function track(e){
@@ -58,23 +60,26 @@ $(document).ready(function() {
 
 	$('#newGameButton').click(function(e) { 
 		localStorage.setItem('levelNumber', 1);
+		localStorage.setItem('score', 0);
 		level = 1;
+		score = 0;
+		timer = 60;
 		loadLevel();
+		drawUI();
 	});
 
 	function nextLevel(){
 		//clearInterval(myInterval);
 		level++;
-		localStorage.setItem('levelNumber', level);
 		loadLevel();
+		score += timer;
+		timer = 60;
+		localStorage.setItem('levelNumber', level);
+		localStorage.setItem('score', score);
 		$('#player').stop();
     	$('#player').css({left:0,top:0});
 		//waitingForLevelChange = false;
-		score += timer;
-		$('#score').text('Score: ' + parseInt(score));
-		$('#level').text('Level: ' + parseInt(level));
-		timer = 60;
-		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds');
+		drawUI();
 
 	}
 
@@ -82,21 +87,27 @@ $(document).ready(function() {
 		$('#player').stop();
 		$('#player').css({left:0,top:0});
 		timer = 60;
-		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds');
+		drawUI();
 	}
 
 	function countdown(){
 		timer--;
 		if(timer <= 0){ playerLoses(); }
-		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds');
+		drawUI();
 	}
 
 	function loadLevel(){
-		$('#background').attr('src','img/TouchCourse/level'+level+'.png')	
+		$('#background').attr('src','img/TouchCourse/level'+level+'.png');	
 		$('#player').css({left:0,top:0});
 		canvas.width = img.width;
 		canvas.height = img.height;
 		canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+	}
+
+	function drawUI(){
+		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds');
+		$('#score').text('Score: ' + parseInt(score));
+		$('#level').text('Level: ' + parseInt(level));
 	}
 
 });
