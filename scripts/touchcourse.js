@@ -4,10 +4,11 @@ $(document).ready(function() {
 	var canvas = document.createElement('canvas');
 	var timer = 60;
 	var	timerInterval = setInterval( countdown, 1000 );
+	var	renderInterval = setInterval( render, 1 );
 	var score = 0;
 	var level = 1;
-	level = localStorage.getItem('levelNumber');
-	score = localStorage.getItem('score');
+	if(localStorage.getItem('levelNumber')){ level = localStorage.getItem('levelNumber'); }
+	if(localStorage.getItem('score')){ score = localStorage.getItem('score'); }
 	//var waitingForLevelChange = false;
 	var target = document.getElementById('player');
 	var observer = new MutationObserver(function(mutations) {
@@ -80,7 +81,6 @@ $(document).ready(function() {
     	$('#player').css({left:0,top:0});
 		//waitingForLevelChange = false;
 		drawUI();
-
 	}
 
 	function playerLoses(){
@@ -97,17 +97,22 @@ $(document).ready(function() {
 	}
 
 	function loadLevel(){
-		$('#background').attr('src','img/TouchCourse/level'+level+'.png');	
 		$('#player').css({left:0,top:0});
-		canvas.width = img.width;
-		canvas.height = img.height;
-		canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
 	}
 
 	function drawUI(){
 		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds');
 		$('#score').text('Score: ' + parseInt(score));
 		$('#level').text('Level: ' + parseInt(level));
+	}
+
+	function render(){
+		$('#background').attr('src','img/TouchCourse/level'+level+'.png');	
+		img = document.getElementById('background');
+		canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+		canvas.width = img.width;
+		canvas.height = img.height;
+		canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
 	}
 
 });
