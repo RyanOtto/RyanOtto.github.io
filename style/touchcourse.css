@@ -1,7 +1,12 @@
-#course{ height:100%; border:8px solid; }
 #background{ width:100%; height:100%; }
+#belowGameContainer{ border: solid 5px blue; }
+#course{ height:100%; border:8px solid; }
+#newGameButton{ border: solid 5px black; border-radius:10px; display:inline-block; } 
 #player{ position:absolute; height:7.5%; width:3.75%; animation:rotate 4s infinite }
-#stats{ border: solid 10px blue; }
+#stats1{ margin-left:5.5%; }
+
+.statistic{ display:inline-block; margin-right:5%; }
+
 
 @keyframes rotate {
   from { transform: rotate(0deg); }

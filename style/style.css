@@ -3,11 +3,11 @@ h2{ text-align: center; }
 a{ text-decoration: none; }
 body{ background-color:white; color:black; font-family:verdana }
 
+#aboutMe{ font-size:20px; margin-right:.15em; }
+#accordion-resizer { justify-content:center; }
 #navbar{ justify-content:center; margin-right:1.5em; display:flex; font-size:20px; /* border-style:solid; */ margin-right:0; margin-left:0; }
 #navbar-item-main{ background-image:url('../img/line.png'); background-repeat:repeat-x; background-position:100% 95%; padding-bottom:8px; white-space:nowrap; }
 #banner{ background-color:#007fff; color:white; border-radius: 25px; padding-bottom:1px; padding-top:1px; text-align:center;}
-#aboutMe{ font-size:20px; margin-right:.15em; }
-#accordion-resizer { justify-content:center; }
 
 .aboutMeEntries{ width:70%; margin:0; margin-left:auto; margin-right:auto; border:9px solid; border-radius: 20px; }
 .accordionEntry{ text-align:left;font-size:30px; }

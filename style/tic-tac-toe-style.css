@@ -7,10 +7,10 @@
 
 #tic-tac-toe-board{ text-align:center; font-size:13em; margin-left:5%; width:90%; }
 
-.filledOne{ content: 'whatever it is you want to add';}
-.filledTwo{ content: 'whatever it is you want to add';}
-.gameRow{ display:inline-block; }
 .game-entry{ border:solid; }
 .game-entry-top{ border-right:solid; }
 .game-entry-middle{ border-right:solid; }
 .game-entry-bottom{ border-right:solid; }
+.gameRow{ display:inline-block; }
+.filledOne{ content: 'whatever it is you want to add';}
+.filledTwo{ content: 'whatever it is you want to add';}
