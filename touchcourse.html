@@ -7,7 +7,7 @@
   <title>Work in Progress</title>
   
   <link rel="stylesheet" type="text/css" href="style/style.css">
-    <link rel="stylesheet" type="text/css" href="style/touchcourse.css">
+  <link rel="stylesheet" type="text/css" href="style/touchcourse.css">
   <link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
   <link rel="shortcut icon" type="image/ico" href="favicon.ico">	 
   
@@ -34,11 +34,18 @@
 
 <div id="belowGameContainer">
   
-  <div id="stats1">
+  <div id="statsDiv">
     <center>
       <p id="level" class="statistic">Level: 1</p>
       <p id="timer" class="statistic">Timer: 60 seconds</p>
       <p id="score" class="statistic">Score: 0</p>
+    </center>
+  </div>
+    <div id="statsDiv">
+    <center>
+      <p id="highestLevel" class="statistic">Highest Level: N/A</p>
+      <p id="fastestTimes" class="statistic">Quickest time: N/A</p>
+      <p id="highScore" class="statistic">Highest Score: N/A</p>
     </center>
   </div>
 
@@ -46,7 +53,7 @@
       <center>
               <p id="newGameButton">&nbsp;New Game&nbsp;</p>
               <p>
-                Click a part of the screen you want your rotating ball to move towards.  If the ball hits a grey part of the level, you lose and must restart the round.  If it hits a blue part of the level, you win the round.
+                Click a part of the screen you want your rotating ball to move towards.  If the ball hits a grey part of the level, you lose and must restart the round.  If it hits a blue part of the level, you win the round and your remaining time is added to your score.
               </p>
       </center>
     </div>

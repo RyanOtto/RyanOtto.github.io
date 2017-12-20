@@ -7,9 +7,17 @@ $(document).ready(function() {
 	var	renderInterval = setInterval( render, 1 );
 	var score = 0;
 	var level = 1;
+	var timeTaken = 0;
+	var fastestTimes = [999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999,999];
+	var highestLevel = 1;
+	var highScore = 0;
+
 	if(localStorage.getItem('levelNumber')){ level = parseInt(localStorage.getItem('levelNumber')); }
 	if(localStorage.getItem('score')){ score = parseInt(localStorage.getItem('score')); }
-	//var waitingForLevelChange = false;
+	if(localStorage.getItem('fastestTimes')){ fastestTimes = JSON.parse(localStorage.getItem("fastestTimes")); }
+	if(localStorage.getItem('highestLevel')){ highestLevel = parseInt(localStorage.getItem('levelNumber')); }
+	if(localStorage.getItem('highScore')){ highScore = parseInt(localStorage.getItem('levelNumber')); }
+
 	var target = document.getElementById('player');
 	var observer = new MutationObserver(function(mutations) {
 	 mutations.forEach(function(mutation) {
@@ -31,23 +39,19 @@ $(document).ready(function() {
 	 	var pixelData3 = canvas.getContext('2d').getImageData(parseFloat(left)+parseFloat(($('#player').css('width')))-10, parseFloat(top)+parseFloat(($('#player').css('height')))-15, 1, 1).data;
 	 	var pixelData4 = canvas.getContext('2d').getImageData(parseFloat(left)-15, parseFloat(top)+parseFloat(($('#player').css('height')))-15, 1, 1).data;
 	 	
-	 	console.log(pixelData[0] + ' ' + pixelData[1] + ' ' + pixelData[2]);
+	 	//console.log(pixelData[0] + ' ' + pixelData[1] + ' ' + pixelData[2]);
 
 		if(pixelData[0]>190 && pixelData[0]<200 && pixelData[1]>190 && pixelData[1]<200 && pixelData[2]>190 && pixelData[2]<200 
 		|| pixelData2[0]>190 && pixelData2[0]<200 && pixelData2[1]>190 && pixelData2[1]<200 && pixelData2[2]>190 && pixelData2[2]<200 
 		|| pixelData3[0]>190 && pixelData3[0]<200 && pixelData3[1]>190 && pixelData3[1]<200 && pixelData3[2]>190 && pixelData3[2]<200 
 		|| pixelData4[0]>190 && pixelData4[0]<200 && pixelData4[1]>190 && pixelData4[1]<200 && pixelData4[2]>190 && pixelData4[2]<200 ){ 
-			//alert("You lose!");
 			playerLoses();
 		}
 		else if(pixelData[0]==0 && pixelData[1]==162 && pixelData[2]==232
 		|| pixelData2[0]==0 && pixelData2[1]==162 && pixelData2[2]==232
 		|| pixelData3[0]==0 && pixelData3[1]==162 && pixelData3[2]==232
 		|| pixelData4[0]==0 && pixelData4[1]==162 && pixelData4[2]==232){ 
-			//if(!waitingForLevelChange){ 
-				nextLevel(); 
-				//waitingForLevelChange = true;
-			//}
+			nextLevel(); 
 		}
 	 }
 
@@ -70,16 +74,32 @@ $(document).ready(function() {
 	});
 
 	function nextLevel(){
-		//clearInterval(myInterval);
 		level++;
-		loadLevel();
 		score += timer;
+		timeTaken = 60-timer;
+		if(typeof fastestTimes[level-1] === 'undefined'){
+			fastestTimes[level-1] = timeTaken;
+			alert(fastestTimes[level-1]);
+			localStorage.setItem('fastestTimes', JSON.stringify(fastestTimes));
+		}
+		if(timeTaken < fastestTimes[level-1]){
+			fastestTimes[level-1] = timeTaken;
+			localStorage.setItem('fastestTimes', JSON.stringify(fastestTimes));
+		}
+		if(level > highestLevel){
+			highestLevel = level;
+			localStorage.setItem('highestLevel', level);
+		}
+		if(score > highScore){
+			highScore = score;
+			localStorage.setItem('highScore', highScore);
+		}
+		loadLevel();
 		timer = 60;
 		localStorage.setItem('levelNumber', level);
 		localStorage.setItem('score', score);
 		$('#player').stop();
     	$('#player').css({left:0,top:0});
-		//waitingForLevelChange = false;
 		drawUI();
 	}
 
@@ -101,9 +121,12 @@ $(document).ready(function() {
 	}
 
 	function drawUI(){
-		$('#timer').text('Timer: ' + parseInt(timer) + ' seconds');
+		$('#timer').text('Timer: ' + parseInt(timer) + 's');
 		$('#score').text('Score: ' + parseInt(score));
 		$('#level').text('Level: ' + parseInt(level));
+		$('#highestLevel').text('Highest Level: ' + parseInt(highestLevel));
+		$('#fastestTimes').text(fastestTimes[level] == 999? 'Quickest time this level: N/A':'Quickest time this level: ' + fastestTimes[level] + 's');
+		$('#highScore').text('Highest Score: ' + parseInt(highScore));
 	}
 
 	function render(){
