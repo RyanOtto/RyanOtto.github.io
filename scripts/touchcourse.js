@@ -39,7 +39,7 @@ $(document).ready(function() {
 	 	var pixelData3 = canvas.getContext('2d').getImageData(parseFloat(left)+parseFloat(($('#player').css('width')))-10, parseFloat(top)+parseFloat(($('#player').css('height')))-15, 1, 1).data;
 	 	var pixelData4 = canvas.getContext('2d').getImageData(parseFloat(left)-15, parseFloat(top)+parseFloat(($('#player').css('height')))-15, 1, 1).data;
 	 	
-	 	//console.log(pixelData[0] + ' ' + pixelData[1] + ' ' + pixelData[2]);
+	 	console.log(pixelData[0] + ' ' + pixelData[1] + ' ' + pixelData[2]);
 
 		if(pixelData[0]>190 && pixelData[0]<200 && pixelData[1]>190 && pixelData[1]<200 && pixelData[2]>190 && pixelData[2]<200 
 		|| pixelData2[0]>190 && pixelData2[0]<200 && pixelData2[1]>190 && pixelData2[1]<200 && pixelData2[2]>190 && pixelData2[2]<200 
@@ -47,10 +47,10 @@ $(document).ready(function() {
 		|| pixelData4[0]>190 && pixelData4[0]<200 && pixelData4[1]>190 && pixelData4[1]<200 && pixelData4[2]>190 && pixelData4[2]<200 ){ 
 			playerLoses();
 		}
-		else if(pixelData[0]==0 && pixelData[1]==162 && pixelData[2]==232
-		|| pixelData2[0]==0 && pixelData2[1]==162 && pixelData2[2]==232
-		|| pixelData3[0]==0 && pixelData3[1]==162 && pixelData3[2]==232
-		|| pixelData4[0]==0 && pixelData4[1]==162 && pixelData4[2]==232){ 
+		else if(pixelData[0]>=0 && pixelData[0]<10 && pixelData[1]>150 && pixelData[1]<170 && pixelData[2]>230 && pixelData[2]<240
+		|| pixelData2[0]>=0 && pixelData2[0]<10 && pixelData2[1]>150 && pixelData2[1]<170 && pixelData2[2]>230 && pixelData2[2]<240
+		|| pixelData3[0]>=0 && pixelData3[0]<10 && pixelData3[1]>150 && pixelData3[1]<170 && pixelData3[2]>230 && pixelData3[2]<240
+		|| pixelData4[0]>=0 && pixelData4[0]<10 && pixelData4[1]>150 && pixelData4[1]<170 && pixelData4[2]>230 && pixelData4[2]<240){ 
 			nextLevel(); 
 		}
 	 }
