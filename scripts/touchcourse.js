@@ -63,6 +63,10 @@ $(document).ready(function() {
 		});
 	});
 
+	$('#nextLevelButton').click(function(e) { 
+		nextLevel();
+	});
+
 	$('#newGameButton').click(function(e) { 
 		localStorage.setItem('levelNumber', 1);
 		localStorage.setItem('score', 0);
