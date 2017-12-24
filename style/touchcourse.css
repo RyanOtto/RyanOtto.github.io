@@ -2,7 +2,7 @@
 #belowGameContainer{ border: solid 8px black; }
 #course{ height:100%; border:8px solid; }
 #newGameButton{ border: solid 5px black; border-radius:10px; display:inline-block; } 
-#player{ position:absolute; height:6.75%; width:3.375%; animation:rotate 4s infinite }
+#player{ position:absolute; height:5.4%; width:2.7%; animation:rotate 4s infinite }
 
 .statsDiv{ margin-left:5.5%; }
 .statistic{ display:inline-block; margin-right:5%; }
