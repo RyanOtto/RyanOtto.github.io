@@ -12,7 +12,7 @@ body{ background-color:white; color:black; font-family:verdana }
 .aboutMeEntries{ margin-left:5% !important; margin-right:5% !important; width:90%; text-align:center !important; border:9px solid; border-radius: 20px; }
 .accordionEntry{ text-align:left;font-size:30px; }
 .beforeInfoDiv{ display:inline-block; }
-.infoDiv{ color:blue; display:inline-block; }
+.infoDiv{ color:#007fff; display:inline-block; }
 .navbar-item{ padding-right:1.5em; }
-.rainbow { animation: colorRotate 6s linear 0s infinite; }
 .ui-accordion-header-active{ background-color:#007fff !important; color:white !important;}
+.ui-widget-content{ border:none !important; }
