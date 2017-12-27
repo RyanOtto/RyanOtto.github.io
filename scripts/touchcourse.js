@@ -15,8 +15,8 @@ $(document).ready(function() {
 	if(localStorage.getItem('levelNumber')){ level = parseInt(localStorage.getItem('levelNumber')); }
 	if(localStorage.getItem('score')){ score = parseInt(localStorage.getItem('score')); }
 	if(localStorage.getItem('fastestTimes')){ fastestTimes = JSON.parse(localStorage.getItem("fastestTimes")); }
-	if(localStorage.getItem('highestLevel')){ highestLevel = parseInt(localStorage.getItem('levelNumber')); }
-	if(localStorage.getItem('highScore')){ highScore = parseInt(localStorage.getItem('levelNumber')); }
+	if(localStorage.getItem('highestLevel')){ highestLevel = parseInt(localStorage.getItem('highestLevel')); }
+	if(localStorage.getItem('highScore')){ highScore = parseInt(localStorage.getItem('highScore')); }
 
 	var target = document.getElementById('player');
 	var observer = new MutationObserver(function(mutations) {
@@ -29,7 +29,7 @@ $(document).ready(function() {
 	observer.observe(target, config);
 
 	drawUI();
-	loadLevel();
+	$('#player').css({left:0,top:0});
 
 	 function track(e){
 	 	var left = ($('#player').css('left'));
@@ -39,7 +39,7 @@ $(document).ready(function() {
 	 	var pixelData3 = canvas.getContext('2d').getImageData(parseFloat(left)+parseFloat(($('#player').css('width')))-10, parseFloat(top)+parseFloat(($('#player').css('height')))-15, 1, 1).data;
 	 	var pixelData4 = canvas.getContext('2d').getImageData(parseFloat(left)-15, parseFloat(top)+parseFloat(($('#player').css('height')))-15, 1, 1).data;
 	 	
-	 	console.log(pixelData[0] + ' ' + pixelData[1] + ' ' + pixelData[2]);
+	 	// console.log(pixelData[0] + ' ' + pixelData[1] + ' ' + pixelData[2]);
 
 		if(pixelData[0]>190 && pixelData[0]<200 && pixelData[1]>190 && pixelData[1]<200 && pixelData[2]>190 && pixelData[2]<200 
 		|| pixelData2[0]>190 && pixelData2[0]<200 && pixelData2[1]>190 && pixelData2[1]<200 && pixelData2[2]>190 && pixelData2[2]<200 
@@ -68,42 +68,20 @@ $(document).ready(function() {
 	});
 
 	$('#newGameButton').click(function(e) { 
-		localStorage.setItem('levelNumber', 1);
-		localStorage.setItem('score', 0);
-		level = 1;
-		score = 0;
-		timer = 60;
-		loadLevel();
-		drawUI();
+		newGame();
 	});
 
 	function nextLevel(){
 		level++;
 		score += timer;
 		timeTaken = 60-timer;
-		if(typeof fastestTimes[level-1] === 'undefined'){
-			fastestTimes[level-1] = timeTaken;
-			alert(fastestTimes[level-1]);
-			localStorage.setItem('fastestTimes', JSON.stringify(fastestTimes));
-		}
-		if(timeTaken < fastestTimes[level-1]){
-			fastestTimes[level-1] = timeTaken;
-			localStorage.setItem('fastestTimes', JSON.stringify(fastestTimes));
-		}
-		if(level > highestLevel){
-			highestLevel = level;
-			localStorage.setItem('highestLevel', level);
-		}
-		if(score > highScore){
-			highScore = score;
-			localStorage.setItem('highScore', highScore);
-		}
-		loadLevel();
-		timer = 60;
-		localStorage.setItem('levelNumber', level);
-		localStorage.setItem('score', score);
+		save();
 		$('#player').stop();
     	$('#player').css({left:0,top:0});
+    	if(level>10){ 
+    		alert("Congratulations!  You beat the game!  Press OK to start a new one and try to beat your high score!");
+    	 	newGame(); 
+    	}
 		drawUI();
 	}
 
@@ -118,10 +96,6 @@ $(document).ready(function() {
 		timer--;
 		if(timer <= 0){ playerLoses(); }
 		drawUI();
-	}
-
-	function loadLevel(){
-		$('#player').css({left:0,top:0});
 	}
 
 	function drawUI(){
@@ -141,6 +115,38 @@ $(document).ready(function() {
 		canvas.width = img.width;
 		canvas.height = img.height;
 		ctx.drawImage(img, 0, 0, img.width, img.height);
+	}
+
+	function newGame(){
+		localStorage.setItem('levelNumber', 1);
+		localStorage.setItem('score', 0);
+		level = 1;
+		score = 0;
+		timer = 60;
+		$('#player').css({left:0,top:0});
+		drawUI();
+	}
+
+	function save(){
+		if(typeof fastestTimes[level-1] === 'undefined'){
+			fastestTimes[level-1] = timeTaken;
+			localStorage.setItem('fastestTimes', JSON.stringify(fastestTimes));
+		}
+		if(timeTaken < fastestTimes[level-1]){
+			fastestTimes[level-1] = timeTaken;
+			localStorage.setItem('fastestTimes', JSON.stringify(fastestTimes));
+		}
+		if(level > highestLevel && level <= 10){
+			highestLevel = level;
+			localStorage.setItem('highestLevel', level);
+		}
+		if(score > highScore){
+			highScore = score;
+			localStorage.setItem('highScore', highScore);
+		}
+		timer = 60;
+		localStorage.setItem('levelNumber', level);
+		localStorage.setItem('score', score);
 	}
 
 });

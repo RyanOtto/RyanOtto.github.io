@@ -3,8 +3,9 @@
 #course{ height:100%; border:8px solid; }
 #newGameButton{ border: solid 5px black; border-radius:10px; display:inline-block; } 
 #player{ position:absolute; height:5.4%; width:2.7%; animation:rotate 4s infinite }
+#statsDiv1{ margin-left:4.5% !important; }
+#statsDiv2{ margin-left:6% !important; }
 
-.statsDiv{ margin-left:5.5%; }
 .statistic{ display:inline-block; margin-right:5%; }
 
 @keyframes rotate {
