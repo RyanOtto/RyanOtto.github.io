@@ -13,3 +13,7 @@ a{ text-decoration: none; font-weight: bold; }
 
 .projectTitle{ color:blue; }
 .section h2{ margin-left:5%; margin-right:5%; }
+
+@media screen and (max-device-width:1199px){
+	html{ font-size:50%; }
+}

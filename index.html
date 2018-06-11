@@ -14,8 +14,7 @@
   <link rel="stylesheet" type="text/css" href="style/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="style/jquery.fullPage.css">
   <link rel="stylesheet" type="text/css" href="style/index.css">
-  <link rel="shortcut icon" type="image/ico" href="favicon.ico">	 
-  
+
   <script src="scripts/jquery-3.2.1.min.js"></script>
   <script src="scripts/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
   <script src="scripts/scrolloverflow.min.js"></script>
@@ -25,9 +24,10 @@
 
 <body id="index">
   <div id="menu">
-    <li data-menuanchor="Work in Progress" class="active"><a href="#Work in Progress">Work in Progress</a></li>
+    <li data-menuanchor="Work in Progress" class="active"><a href="#Work in Progress">Welcome</a></li>
     <li data-menuanchor="About Me"><a href="#About Me">About Me</a></li>
     <li data-menuanchor="My Projects"><a href="#My Projects">My Projects</a></li>
+    <li data-menuanchor="Apps"><a href="#Apps">Apps</a></li>
   </div>
 
 <div id="fullpage">
@@ -36,16 +36,15 @@
         <div id="navbar">
           <p class="navbar-item"><a id="navbar-item-main" href="index.html">Home</a></p>
           <p class="navbar-item"><a href="tictactoe.html">Tic-Tac-Toe</a></p>
-          <p class="navbar-item"><a href="puns.html">Puns</a></p>
           <p class="navbar-item"><a href="touchcourse.html">Touch Course</a></p>
         </div>
-        <h1>Work in Progress</h1>
-        <h2>My Personal Website</h2>
+        <h1>RyanOtto.GitHub.IO</h1>
+        <h2>Welcome to my personal website</h2>
     </div>
 
     <div class="section">
       <h1>About Me</h1>
-      <h2>My name is Ryan, and I am a Comp Sci grad who enjoys learning languages and coding.  Lately, I've been working on peoples' websites and some projects of my own to learn.</h2>
+      <h2>My name is Ryan, and I am a Comp Sci grad who enjoys learning languages and coding.  Lately, I've been working on peoples' websites and some projects of my own.</h2>
     </div>
 
 
@@ -88,8 +87,15 @@
         <h2>I use Discord, a free VOIP/chat server program, to stay in touch with my friends and meet new people.  Bots are a common thing in Discord servers and help automate server management tasks (preventing spam, greeting new members, extending a server's functionality) and can provide fun new features to play around with.  I made a bot using <a href="http://discordpy.readthedocs.io/en/latest/index.html">discord.py</a>, which serves as a Python wrapper for the Discord API.  The PartyBot can play games with users and provides a couple of other tools, such as the ability to look up word definitions on various sites and send greetings in response to user input.  It's hosted on Heroku's free tier 24/7, and can be invited to a Discord server from <a href="https://discordapp.com/oauth2/authorize?client_id=369851263480889345&scope=bot&permissions=0">this</a> link.</h2>
         <h2>&nbsp</h2>
       </div>
-  
+      </div>
+
+    <div class="section">
+      <div class="slide">   
+        <h1>Pun Generator</h1>
+        <h2><p id="pun" style="font-size:80%;"></p></h2>
+      </div>    
     </div>
+
 
 </div>     
 </body>

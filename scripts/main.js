@@ -3,7 +3,7 @@ $('#fullpage').fullpage({
 		//Navigation
 		menu: '#menu',
 		lockAnchors: false,
-        anchors: ['Work in Progress', 'About Me', 'My Projects'],
+        anchors: ['Work in Progress', 'About Me', 'My Projects', 'Apps'],
 		navigation: false,
 		navigationPosition: 'right',
 		navigationTooltips: ['firstSlide', 'secondSlide'],
@@ -71,4 +71,25 @@ $('#fullpage').fullpage({
 		afterResponsive: function(isResponsive){},
 		afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
 		onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
-	});});
+	});
+
+	var punString, punStringArr, whichPun;
+
+	$.get('resources/puns.txt', function(data) {
+		 punString=data;
+		 punStringArr=punString.split("\n");
+		newPun();
+	}, 'text');
+
+
+	function newPun(){
+		var whichPun = Math.floor((Math.random() * punStringArr.length)); 
+		$('#pun').fadeTo('3000', 0, function() {
+			$('#pun').text(punStringArr[whichPun]);
+		});
+		$('#pun').fadeTo('3000', 1);
+	}
+
+	  setInterval( newPun, 5000);
+
+});
