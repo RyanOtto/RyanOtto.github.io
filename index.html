@@ -7,7 +7,7 @@
   <meta name="author" content="Ryan Otto">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Work in Progress</title>
+  <title>Ryan's Site</title>
   
   <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style/style.css">
@@ -27,7 +27,7 @@
     <li data-menuanchor="Work in Progress" class="active"><a href="#Work in Progress">Welcome</a></li>
     <li data-menuanchor="About Me"><a href="#About Me">About Me</a></li>
     <li data-menuanchor="My Projects"><a href="#My Projects">My Projects</a></li>
-    <li data-menuanchor="Apps"><a href="#Apps">Apps</a></li>
+    <li data-menuanchor="Apps"><a href="#Apps">Small Apps</a></li>
   </div>
 
 <div id="fullpage">
@@ -35,7 +35,6 @@
     <div class="section" id="intro">
         <div id="navbar">
           <p class="navbar-item"><a id="navbar-item-main" href="index.html">Home</a></p>
-          <p class="navbar-item"><a href="tictactoe.html">Tic-Tac-Toe</a></p>
           <p class="navbar-item"><a href="touchcourse.html">Touch Course</a></p>
         </div>
         <h1>RyanOtto.GitHub.IO</h1>
@@ -53,7 +52,7 @@
       <div class="slide">  
         <h1>My Projects</h1>
         <a style="text-align:center;" href="https://github.com/RyanOtto/Tabletop-Dice-Roller"><h1 class="projectTitle">Tabletop Dice Roller</h1></a>
-        <h2>I play a lot of tabletop games like Dungeons and Dragons, and these games involve a lot of dice rolling to determine whether or not something your character does is a success, a failure, or a critical hit/miss.  Since there's no single system of what dice to roll or what the numbers mean, it can be hard to find a good dice rolling program for your particular ruleset.  I also got tired of rolling my dice off of tables/desks/other flat surfaces and having to keep manual track of all the results. That's why I made a program that lets the user define their own rules/sets of dice, and tells you how many successes, failures and criticals that you get for you.</h2>
+        <h2>I play a lot of tabletop games like Dungeons and Dragons, and these games involve a lot of dice rolling to determine whether or not something your character does is a success, a failure, or a critical hit/miss.  Since there's no single system of what dice to roll or what the numbers mean, it can be hard to find a good dice rolling program for your particular ruleset.  I also got tired of rolling my dice off of tables/desks/other flat surfaces and having to keep manual track of all the results. That's why I made a program that lets the user define their own rules/sets of dice, and tells you how many successes, failures and criticals that you get.</h2>
         <h2>&nbsp</h2>
       </div>
 
@@ -84,17 +83,43 @@
       <div class="slide">  
         <h1>My Projects</h1>
         <h1 class="projectTitle"><a style="text-align:center;" href="https://github.com/RyanOtto/PartyBot.py">Party Bot</a></h1>
-        <h2>I use Discord, a free VOIP/chat server program, to stay in touch with my friends and meet new people.  Bots are a common thing in Discord servers and help automate server management tasks (preventing spam, greeting new members, extending a server's functionality) and can provide fun new features to play around with.  I made a bot using <a href="http://discordpy.readthedocs.io/en/latest/index.html">discord.py</a>, which serves as a Python wrapper for the Discord API.  The PartyBot can play games with users and provides a couple of other tools, such as the ability to look up word definitions on various sites and send greetings in response to user input.  It's hosted on Heroku's free tier 24/7, and can be invited to a Discord server from <a href="https://discordapp.com/oauth2/authorize?client_id=369851263480889345&scope=bot&permissions=0">this</a> link.</h2>
+        <h2>I use Discord, a free VOIP/chat server program, to stay in touch with my friends and meet new people.  Bots are a common thing in Discord servers and help automate server management tasks (preventing spam, greeting new members, extending a server's functionalitye="http://discordpy.readthedocs.io/en/latest/index.html">discord.py</a>, which serves as a Python wrapper for the Discord API.  The PartyBot can play games with users and provides a couple of other tools, such as the ability to look up word definitions on various sites and send greetings in response to user input.  It's hosted on Heroku's free tier 24/7, and can be invited to a Discord server from <a href="https://discordapp.com/oauth2/authorize?client_id=369851263480889345&scope=bot&permissions=0">this</a> link.</h2>
         <h2>&nbsp</h2>
       </div>
       </div>
 
     <div class="section">
       <div class="slide">   
-        <h1>Pun Generator</h1>
+        <h1>Puns!</h1>
         <h2><p id="pun" style="font-size:80%;"></p></h2>
-      </div>    
-    </div>
+      </div>
+
+          <div class="slide">
+                        <h1>Tic Tac Toe!</h1>
+
+              <div id="dialog" style="display:none;" title="Game Over!">
+                  <p>Tie!</p>
+              </div>
+            
+            <table id="tic-tac-toe-board">
+               <tr>
+                    <td class="unfilled" id="1" style="border-right:10px solid; border-bottom:10px solid;"> &nbsp; </td>
+                    <td class="unfilled" id="2" style="border-right:10px solid; border-bottom:10px solid;"> &nbsp; </td>
+                   <td class="unfilled" id="3"  style="border-bottom:10px solid;"> &nbsp; </td>
+                </tr>
+                <tr>
+                      <td class="unfilled" id="4"  style="border-right:10px solid; border-bottom:10px solid;"> &nbsp; </td>
+                      <td class="unfilled" id="5"  style="border-right:10px solid; border-bottom:10px solid;"> &nbsp; </td>
+                      <td class="unfilled" id="6"  style="border-bottom:10px solid;"> &nbsp; </td>
+                </tr>
+                <tr>
+                    <td class="unfilled" id="7"  style="border-right:10px solid;"> &nbsp; </td>
+                    <td class="unfilled" id="8"  style="border-right:10px solid;"> &nbsp; </td>
+                    <td class="unfilled" id="9"> &nbsp; </td>
+                </tr>
+           </table>
+          </div>    
+      </div>
 
 
 </div>     

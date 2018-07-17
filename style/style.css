@@ -17,3 +17,13 @@ a{ text-decoration: none; font-weight: bold; }
 @media screen and (max-device-width:1199px){
 	html{ font-size:50%; }
 }
+
+#tic-tac-toe-board{ width:50%; margin-left:25%; height:100%; }
+#tic-tac-toe-board td{ width:33%; }
+
+@media screen and (min-width: 601px) { #tic-tac-toe-board{ font-size:8em !important; } }
+@media screen and (max-width: 600px) { #tic-tac-toe-board{ font-size:6em !important; } }
+@media screen and (max-width: 460px) { #tic-tac-toe-board{ font-size:4em !important; } }
+@media screen and (max-width: 380px) { #tic-tac-toe-board{ font-size:2em !important; } }
+@media screen and (max-width: 285px) { #tic-tac-toe-board{ font-size:1em !important; } }
+@media screen and (max-width: 200px) { #tic-tac-toe-board{ font-size:1em !important; } }
