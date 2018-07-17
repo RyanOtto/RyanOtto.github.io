@@ -6,20 +6,19 @@ a{ text-decoration: none; font-weight: bold; }
 #accordion-resizer { justify-content:center; }
 #navbar{ justify-content:center; display:flex; margin-right:0; margin-left:0; }
 #navbar-item-main{ font-style:italic; color:black !important; pointer-events: none; }
+#tic-tac-toe-board{ width:50%; margin-left:25%; height:100%; }
+#tic-tac-toe-board td{ width:33%; }
 
 .navbar-item{ padding-right:2%; }
-.ui-accordion-header-active{ background-color:#007fff !important; color:white !important;}
-.ui-widget-content{ border:none !important; }
-
 .projectTitle{ color:blue; }
 .section h2{ margin-left:5%; margin-right:5%; }
+.ui-accordion-header-active{ background-color:#007fff !important; color:white !important;}
+.ui-widget-content{ border:none !important; }
+.ui-widget .ui-widget {	font-size: 0.8em !important; }
 
 @media screen and (max-device-width:1199px){
 	html{ font-size:50%; }
 }
-
-#tic-tac-toe-board{ width:50%; margin-left:25%; height:100%; }
-#tic-tac-toe-board td{ width:33%; }
 
 @media screen and (min-width: 601px) { #tic-tac-toe-board{ font-size:8em !important; } }
 @media screen and (max-width: 600px) { #tic-tac-toe-board{ font-size:6em !important; } }
