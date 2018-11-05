@@ -1,10 +1,14 @@
 h1{ text-align: center; font-family: Quattrocento Sans, Verdana; }
 h2{ text-align: center; font-family: Quattrocento Sans, Verdana; }
 a{ text-decoration: none; font-weight: bold; }
+hr{width:30%; height:3px; background-color:#444444; border:none; margin-bottom:30px;}
 
 .navbar-item{ padding-right:2%; }
 .section h2{ margin-left:5%; margin-right:5%; }
-
+.rslides { position: relative; list-style: none; overflow: hidden; width: 100%; padding: 0; margin: 0; }
+.rslides li { -webkit-backface-visibility: hidden; position: absolute; display: none; width: 100%; left: 0; top: 0; }
+.rslides li:first-child { position: relative; display: block; float: left; }
+.rslides img { display: block; height: auto; float: left; width: 100%; border: 0; width:80%; margin-left:10%; }
 
 @media screen and (max-device-width:1199px){
 	html{ font-size:50%; }
